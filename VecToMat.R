@@ -2,7 +2,7 @@
 library(tidyverse)
 
 Wide <- function(vec){
-  matA <- matrix(0, length(vec), max(vec))
+  matA <- matrix(0, length(vec), max(vec,na.rm = TRUE))
   for(i in 1:ncol(matA)){
     matA[vec == i,i] <- 1
   }
@@ -10,5 +10,6 @@ Wide <- function(vec){
   return(matB)
 }
 
-X <- c(1,2,3,4,5,6,7,8,9,10)
+# Test
+X <- c(1,2,3,4,5,6,7,8,9,0,NA)
 Wide(X)
