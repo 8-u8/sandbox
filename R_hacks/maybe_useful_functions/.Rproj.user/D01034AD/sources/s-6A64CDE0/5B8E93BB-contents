@@ -1,0 +1,5 @@
+day_vec <- lubridate::ymd(paste0("2020-",c(1:12),"-01"))
+
+day_vec
+stats::lag(day_vec)
+day_vec - dplyr::lag(day_vec)
